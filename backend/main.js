@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const homeRoute = require('./routes/home');
+const db = require('./utils/database');
 
 app.use(homeRoute);
 
