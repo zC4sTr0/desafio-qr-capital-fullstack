@@ -1,0 +1,28 @@
+{
+  "name": "qr-crypto-server",
+  "version": "1.0.0",
+  "description": "NodeJS server to support the QR Capital fullstack developer challenge\"",
+  "main": "main.js",
+  "scripts": {
+    "start": "nodemon main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "QRCapital",
+    "NodeJS",
+    "GIT",
+    "Bitcoin",
+    "Crypto",
+    "express"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "node": "^18.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
