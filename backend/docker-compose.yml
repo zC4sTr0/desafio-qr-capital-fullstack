@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  node:
+    container_name: node_container
+    image: node:16.15.1-alpine
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+    depends_on:
+      - postgres
+  postgres:
+    container_name: postgres_container
+    image: postgres:14.4-alpine
+    environment:
+      - POSTGRES_USER=QR_USER
+      - POSTGRES_PASSWORD=alwaysLearning #I would put a strong password here, but I don't want to store it in the repo
+      - POSTGRES_DB=QR_DB
+    ports:
+      - "5432:5432"
+      - "5433:5433"
+    volumes:
+      - ./data:/var/lib/postgresql/data
+volumes:
+  data: {}

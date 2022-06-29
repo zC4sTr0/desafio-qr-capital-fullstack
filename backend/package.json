@@ -4,7 +4,7 @@
   "description": "NodeJS server to support the QR Capital fullstack developer challenge\"",
   "main": "main.js",
   "scripts": {
-    "start": "nodemon main.js",
+  "start": "nodemon ./src/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -19,10 +19,12 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.18.1",
-    "mysql2": "^2.3.3",
-    "node": "^18.4.0"
+    "node": "^18.4.0",
+    "pg": "^8.7.3",
+    "sequelize": "^6.21.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.18"
+    "nodemon": "^2.0.18",
+    "sequelize-cli": "^6.4.1"
   }
 }
