@@ -17,8 +17,9 @@ services:
     image: postgres:14.4-alpine
     environment:
       - POSTGRES_USER=QR_USER
-      - POSTGRES_PASSWORD=alwaysLearning #I would put a strong password here, but I don't want to store it in the repo
+      - POSTGRES_PASSWORD=alwaysLearning #I would put a strong password here, but I don't want to store it in the repo like this
       - POSTGRES_DB=QR_DB
+      - POSTGRES_HOST=host.docker.internal
     ports:
       - "5432:5432"
       - "5433:5433"
