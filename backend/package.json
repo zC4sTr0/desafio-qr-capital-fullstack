@@ -4,8 +4,9 @@
   "description": "NodeJS server to support the QR Capital fullstack developer challenge\"",
   "main": "main.js",
   "scripts": {
-  "start": "nodemon ./src/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/main.js --ignore __tests__"
   },
   "keywords": [
     "QRCapital",
