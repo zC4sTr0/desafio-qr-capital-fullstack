@@ -5,7 +5,7 @@
   "main": "main.js",
   "scripts": {
     "start": "node ./src/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "NODE_ENV=test jest",
     "dev": "nodemon ./src/main.js --ignore __tests__"
   },
   "keywords": [
@@ -24,6 +24,7 @@
     "pg": "^8.7.3"
   },
   "devDependencies": {
+    "dotenv": "^16.0.1",
     "nodemon": "^2.0.18",
     "sequelize-cli": "^6.4.1"
   }
