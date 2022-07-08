@@ -1,3 +1,6 @@
+require("dotenv").config({
+  path: process.env.NODE_ENV === "test" ? ".env.test" : ".env",
+});
 const express = require("express");
 const app = express();
 const homeRoute = require("./app/routes/home.js");
