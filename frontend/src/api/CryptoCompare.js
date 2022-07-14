@@ -23,7 +23,7 @@ async function fetchJSON(url) {
     });
 }
 
-async function getCoinList() {
+const getCoinList = async () => {
   return await fetchJSON(
     baseURL +
       "blockchain/list" +
@@ -31,8 +31,6 @@ async function getCoinList() {
       apiKey +
       "&extraParams=QRCapital-Full-Stack-Challenge"
   );
-}
-
-module.exports = {
-  getCoinList,
 };
+
+export default getCoinList;

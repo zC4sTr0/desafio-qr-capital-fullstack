@@ -1,4 +1,5 @@
 import React from "react";
+import getCoinList from "../../api/CryptoCompare";
 
 export const AppContext = React.createContext();
 
@@ -6,12 +7,22 @@ export class AppProvider extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: "dashboard",
       ...this.savedSettings(),
       setPage: this.setPage,
       confirmFavorites: this.confirmFavorites,
     };
   }
+
+  componentDidMount = () => {
+    this.getCoins();
+  };
+
+  getCoins = async () => {
+    let coinList = await getCoinList();
+    coinList = coinList.Data;
+    console.log(coinList);
+    this.setState({ coinList });
+  };
 
   savedSettings() {
     const savedSettings = localStorage.getItem("settings");
@@ -19,8 +30,10 @@ export class AppProvider extends React.Component {
       console.log("primeira vez");
       return { page: "settings", firstVisit: true };
     }
+
     return {
-      firstVisit: true,
+      firstVisit: false,
+      page: "dashboard",
       favorites: [],
     };
   }
